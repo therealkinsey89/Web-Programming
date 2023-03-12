@@ -61,6 +61,13 @@ header{
             grid-column: 2;
             grid-row: 2;
         }
+
+        .hai-text{
+            grid-column: 2;
+            grid-row: 2;
+            text-align: justify;
+            padding: 0px 25px 0px 15px;
+        }
     /* career header */
         .career{
             grid-row: 3;
