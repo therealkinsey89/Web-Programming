@@ -2,74 +2,84 @@ header{
     text-align: center;
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px 450px;
-}
+/* navigation styling */
+    nav{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 450px;
+    }
 
-nav a{
-    text-decoration:none;
-    color:black;
-    padding: 10px;
-    font-size: larger;
-    font-family: sans-serif;
-}
+        nav a{
+            text-decoration:none;
+            color:black;
+            padding: 10px;
+            font-size: larger;
+            font-family: sans-serif;
+        }
 
-nav a:hover{
-    text-decoration: underline;
-    font-weight: bold;
-}
+        nav a:hover{
+            text-decoration: underline;
+            font-weight: bold;
+        }
 
+/* page container styling */
 #page-container{
     position: relative;
     min-height: 100vh;
 }
 
-.grid-container{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto auto;
-    margin-top: 10px;
-    padding: 20px;
-}
-
-.abam{
-    grid-column: 0;
-    grid-row: 1;
-    margin: 0px;
-}
-
-.abam-text{
-    grid-column: 0;
-    grid-row: 2;
-    text-align: justify;
-    padding: 0px 25px 0px 15px;
-}
-
-.hai{
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0px;
-}
-
-.hai-list{
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.career{
-    grid-row: 3;
-    grid-column: 1;
-    margin: 0px;
-}
-
-.career-text{
-    grid-row: 4;
-    grid-column: 1;
-    text-align: justify;
-    padding: 0px 25px 0px 15px;
-}
+/* grid styling */
+    .grid-container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto;
+        margin-top: 10px;
+        padding: 20px;
+    }
+    /* grid items below */
+    /* a bit about me header */
+        .abam{
+            grid-column: 0;
+            grid-row: 1;
+            margin: 0px;
+        }
+    /* a bit about me text */
+        .abam-text{
+            grid-column: 0;
+            grid-row: 2;
+            text-align: justify;
+            padding: 0px 25px 0px 15px;
+        }
+    /* hobbies and interests header */    
+        .hai{
+            grid-column: 2;
+            grid-row: 1;
+            margin: 0px;
+        }
+    /* hobbies and interests text */
+        .hai-list{
+            grid-column: 2;
+            grid-row: 2;
+        }
+    /* career header */
+        .career{
+            grid-row: 3;
+            grid-column: 1;
+            margin: 0px;
+        }
+    /* career text */
+        .career-text{
+            grid-row: 4;
+            grid-column: 1;
+            text-align: justify;
+            padding: 0px 25px 0px 15px;
+        }
+    /* container image */
+        .containerization-image{
+            grid-row: 4;
+            grid-column: 2;
+            width: 50%;
+        }
 
 footer{
     position: absolute;
