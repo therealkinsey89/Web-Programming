@@ -30,6 +30,9 @@
         $result = $cels * $constant;
         $result += 32;
         echo "<p id='result'> $cels degrees Celsius is $result degrees Fahrenheit. <br>Thank you for using this conversion tool!";
-    ?>    
+    ?>
+    <footer>
+        Course work for University of the Cumberlands course: Web Programming ITSS-334-B20
+    </footer>    
 </body>
 </html>
