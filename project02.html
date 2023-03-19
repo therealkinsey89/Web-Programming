@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <title>Project 02</title>
+    <script>
+        function conversion(f)
+        {
+            var inches;
+            var centConverter = 2.54;
+            inches=parseInt(f.elements["inches"].value);
+            var converted=inches*centConverter;
+            var result = "There are "+converted+" centimeters in "+inches+" inches. \<br\> Thank you for using this conversion tool!";
+            document.getElementById("result").innerHTML=result;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Project 02</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="cause.html">Cause</a>
+    </nav>
+    <h2 id="p2header">Inches to Centimeters Conversion</h2>
+    <form>
+        <label for="inches">Inches:</label><br>
+        <input type="number" id="inches" name="inches" placeholder="0.0"><br>
+        <input type="button" value="Convert" onclick="conversion(this.form)">
+    </form>
+    <p id="result"></p>
+</body>
+</html>
