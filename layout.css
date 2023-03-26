@@ -133,3 +133,12 @@ input{
     text-decoration: underline;
     font-weight: bold;
 }
+
+textarea{
+    margin: 30px 0px 0px 180px;
+}
+
+#convertButton{
+    width: 300;
+    margin: 30px 50%;
+}
