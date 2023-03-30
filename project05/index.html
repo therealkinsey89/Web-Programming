@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../layout.css" rel="stylesheet" type="text/css">
+    <title>Project 05</title>
+    <script>
+        function compute(bal, rate, pay)
+        {
+            document.write("<table>");
+            document.write("<h1>help</h1>");
+            for (let i = 1; i < 13; i++)
+            {
+                document.write("<tr>");
+                for (let j = 0; i < 5; j++)
+                {
+                    if (j = 0)
+                    {
+                        document.write("<td>"+i+"</td>");
+                    }
+                    if (j = 1)
+                    {
+                        document.write("<td>"+bal+"</td>");
+                    }
+                    if (j = 2)
+                    {
+                        var intChar = bal * (rate / 12);
+                        document.write("<td>"+intChar+"</td>");
+                    }
+                    if (j = 3)
+                    {
+                        document.write("<td>"+pay+"</td>");
+                    }
+                    if (j = 4)
+                    {
+                        bal = bal + intChar - pay;
+                        document.write("<td>"+bal+"</td>");
+                    }
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Credit Card Debt Calculator</h1>
+    </header>
+    <form>
+        <label>Beginning Balance</label><br>
+        <input type="number" id="beginBal" name="beginBal"><br>
+        <label>Annual Interest Rate</label><br>
+        <input type="number" id="intRate" name="intRate"><br>
+        <label>Monthly Payment</label><br>
+        <input type="number" id="payment" name="payment"><br>
+        <input type="submit" value="Submit" onclick="compute(beginBal, intRate, payment)">
+    </form>
+    <footer>
+        Course work for University of the Cumberlands course: Web Programming ITSS-334-B20
+    </footer>
+</body>
+</html>
