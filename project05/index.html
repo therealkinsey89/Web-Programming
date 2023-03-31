@@ -9,39 +9,50 @@
     <script>
         function compute(bal, rate, pay)
         {
-            document.write("<table>");
-            document.write("<h1>help</h1>");
-            for (let i = 1; i < 13; i++)
+            const tbl = document.createElement("table");
+            const tblBody = document.createElement("tbody");
+            var beginBalance = bal;
+            var interestRate = rate;
+            var monthlyPayment = pay;
+            var intChar;
+
+            for (let i = 1; i <= 12; i++)
             {
-                document.write("<tr>");
-                for (let j = 0; i < 5; j++)
-                {
-                    if (j = 0)
-                    {
-                        document.write("<td>"+i+"</td>");
-                    }
-                    if (j = 1)
-                    {
-                        document.write("<td>"+bal+"</td>");
-                    }
-                    if (j = 2)
-                    {
-                        var intChar = bal * (rate / 12);
-                        document.write("<td>"+intChar+"</td>");
-                    }
-                    if (j = 3)
-                    {
-                        document.write("<td>"+pay+"</td>");
-                    }
-                    if (j = 4)
-                    {
-                        bal = bal + intChar - pay;
-                        document.write("<td>"+bal+"</td>");
-                    }
-                }
-                document.write("</tr>");
+                const row = document.createElement("tr");
+                    //month
+                    const month = document.createElement("td");
+                    const monthText = document.createTextNode(i);
+                    month.appendChild(monthText);
+                    row.appendChild(month);
+                    //beginning balance
+                    const bbal = document.createElement("td");
+                    const bbalText = document.createTextNode(parseFloat(beginBalance.value, 10));
+                    bbal.appendChild(bbalText);
+                    row.appendChild(bbal);
+                    //interest charge
+                    intChar = beginBalance * (interestRate / 12);
+                    const charge = document.createElement("td");
+                    const chargeText = document.createTextNode(parseFloat(intChar, 10));
+                    charge.appendChild(chargeText);
+                    row.appendChild(charge);
+                    //payment
+                    const monthlyPay = document.createElement("td");
+                    const payText = document.createTextNode(parseFloat(pay.value, 10));
+                    monthlyPay.appendChild(payText);
+                    row.appendChild(monthlyPay);
+                    //ending balance
+                    beginBalance += intChar - pay;
+                    const fbal = document.createElement("td");
+                    const fbalText = document.createTextNode(parseInt(beginBalance, 10));
+                    fbal.appendChild(fbalText);
+                    row.appendChild(fbal);
+
+                tblBody.appendChild(row);
             }
-            document.write("</table>");
+
+            tbl.appendChild(tblBody);
+            document.body.appendChild(tbl);
+            tbl.setAttribute("border", "2");
         }
     </script>
 </head>
@@ -56,7 +67,7 @@
         <input type="number" id="intRate" name="intRate"><br>
         <label>Monthly Payment</label><br>
         <input type="number" id="payment" name="payment"><br>
-        <input type="submit" value="Submit" onclick="compute(beginBal, intRate, payment)">
+        <input type="button" value="Submit" onclick="compute(beginBal, intRate, payment)">
     </form>
     <footer>
         Course work for University of the Cumberlands course: Web Programming ITSS-334-B20

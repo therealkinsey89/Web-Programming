@@ -142,3 +142,7 @@ textarea{
     width: 300;
     margin: 30px 50%;
 }
+
+td{
+    border: 1px solid black;
+}
