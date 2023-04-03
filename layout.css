@@ -165,6 +165,8 @@ td{
         }
 
         th {
+            color: white;
+            background-color: green;
             padding: 0.5rem;
             border: 1px solid #ddd;
         }
@@ -181,4 +183,37 @@ td{
             margin: 0 auto;
             text-align: center;
             height: 2vh;
+        }
+
+        .door {
+            display: inline-block;
+            width: 100px;
+            height: 150px;
+            background-color: brown;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        .selected {
+            background-color: yellow;
+        }
+        
+        .winning {
+            background-color: green;
+        }
+        
+        .losing {
+            background-color: red;
+        }
+        
+        #reselect {
+            display: none;
+        }
+
+        #reveal {
+            display: none;
+        }
+
+        #playAgain {
+            display: none;
         }
