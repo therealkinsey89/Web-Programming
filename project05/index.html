@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,70 +8,106 @@
     <link href="../layout.css" rel="stylesheet" type="text/css">
     <title>Project 05</title>
     <script>
-        function compute(bal, rate, pay)
-        {
+        function compute(bal, rate, pay) {
+            // variable decleration
+            var beginBalance = parseFloat(bal.value);
+            var interestRate = parseFloat(rate.value) / 100;
+            var monthlyPayment = parseFloat(pay.value);
+            var intChar;
+            var monthNum = 1;
+            console.log(beginBalance, interestRate, monthlyPayment);
+
+            document.getElementById("Results").innerHTML = "";
+
+            if (monthlyPayment < (beginBalance * (interestRate / 12))) {
+                document.getElementById("Results").innerHTML = "Your payments are not enough to cover the accumulated interest. Try increasing the payments.";
+                return;
+            }
+            // Create Table
             const tbl = document.createElement("table");
             const tblBody = document.createElement("tbody");
-            var beginBalance = bal;
-            var interestRate = rate;
-            var monthlyPayment = pay;
-            var intChar;
+            const tblhead = document.createElement("thead");
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            });
 
-            for (let i = 1; i <= 12; i++)
-            {
-                const row = document.createElement("tr");
-                    //month
-                    const month = document.createElement("td");
-                    const monthText = document.createTextNode(i);
-                    month.appendChild(monthText);
-                    row.appendChild(month);
-                    //beginning balance
-                    const bbal = document.createElement("td");
-                    const bbalText = document.createTextNode(parseFloat(beginBalance.value, 10));
-                    bbal.appendChild(bbalText);
-                    row.appendChild(bbal);
-                    //interest charge
-                    intChar = beginBalance * (interestRate / 12);
-                    const charge = document.createElement("td");
-                    const chargeText = document.createTextNode(parseFloat(intChar, 10));
-                    charge.appendChild(chargeText);
-                    row.appendChild(charge);
-                    //payment
-                    const monthlyPay = document.createElement("td");
-                    const payText = document.createTextNode(parseFloat(pay.value, 10));
-                    monthlyPay.appendChild(payText);
-                    row.appendChild(monthlyPay);
-                    //ending balance
-                    beginBalance += intChar - pay;
-                    const fbal = document.createElement("td");
-                    const fbalText = document.createTextNode(parseInt(beginBalance, 10));
-                    fbal.appendChild(fbalText);
-                    row.appendChild(fbal);
-
-                tblBody.appendChild(row);
+            var tblheaders = ["Month Number", "Beginning Balance", "Interest Charge", "Payment", "Ending Balance"];
+            for (let i in tblheaders) {
+                let tmpHead = document.createElement("th")
+                tmpHead.innerHTML = tblheaders[i];
+                tblhead.append(tmpHead);
             }
 
+            while (true) {
+                const row = document.createElement("tr");
+                //month
+                const month = document.createElement("td");
+                const monthText = document.createTextNode(monthNum);
+                month.appendChild(monthText);
+                row.appendChild(month);
+                //beginning balance
+                const bbal = document.createElement("td");
+                const bbalText = document.createTextNode(formatter.format(beginBalance));
+                bbal.appendChild(bbalText);
+                row.appendChild(bbal);
+                //interest charge
+                intChar = beginBalance * (interestRate / 12);
+                const charge = document.createElement("td");
+                const chargeText = document.createTextNode(formatter.format(intChar));
+                charge.appendChild(chargeText);
+                row.appendChild(charge);
+                //payment
+                const monthlyPay = document.createElement("td");
+                const payText = document.createTextNode(formatter.format(monthlyPayment));
+                monthlyPay.appendChild(payText);
+                row.appendChild(monthlyPay);
+                //ending balance
+                beginBalance += intChar - monthlyPayment;
+                // if the ending balance at the end of the month <=0 then prepare to exit
+                if (beginBalance <= 0) beginBalance = 0;
+                const fbal = document.createElement("td");
+                const fbalText = document.createTextNode(formatter.format(beginBalance));
+                fbal.appendChild(fbalText);
+                row.appendChild(fbal);
+
+                tblBody.appendChild(row);
+                console.log(monthNum, beginBalance, interestRate, monthlyPayment);
+                // Exit if we are finished paying
+                if (beginBalance == 0) break;
+                // Next Month
+                monthNum += 1;
+            }
+            tbl.appendChild(tblhead);
             tbl.appendChild(tblBody);
-            document.body.appendChild(tbl);
-            tbl.setAttribute("border", "2");
+            document.getElementById("Results").appendChild(tbl);
         }
     </script>
 </head>
+
 <body>
     <header>
         <h1>Credit Card Debt Calculator</h1>
     </header>
-    <form>
-        <label>Beginning Balance</label><br>
-        <input type="number" id="beginBal" name="beginBal"><br>
-        <label>Annual Interest Rate</label><br>
-        <input type="number" id="intRate" name="intRate"><br>
-        <label>Monthly Payment</label><br>
-        <input type="number" id="payment" name="payment"><br>
-        <input type="button" value="Submit" onclick="compute(beginBal, intRate, payment)">
-    </form>
-    <footer>
-        Course work for University of the Cumberlands course: Web Programming ITSS-334-B20
-    </footer>
+    <div class="page-container">
+        <div class="content-container">
+            <form>
+                <label>Beginning Balance</label><br>
+                <input type="number" id="beginBal" name="beginBal"><br>
+                <label>Annual Interest Rate</label><br>
+                <input type="number" id="intRate" name="intRate"><br>
+                <label>Monthly Payment</label><br>
+                <input type="number" id="payment" name="payment"><br>
+                <input type="button" value="Submit" onclick="compute(beginBal, intRate, payment)" id="Submission">
+            </form>
+        </div>
+        <div id="Results">
+            <br>
+        </div>
+        <footer>
+            Course work for University of the Cumberlands course: Web Programming ITSS-334-B20
+        </footer>
+    </div>
 </body>
+
 </html>
