@@ -192,6 +192,15 @@ td{
             background-color: brown;
             margin-right: 20px;
             cursor: pointer;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .door:hover {
+            text-decoration: underline;
+            font-weight: bold;
+            width: 110px;
+            height: 160px;
         }
         
         .selected {
@@ -216,4 +225,21 @@ td{
 
         #playAgain {
             display: none;
+        }
+
+        #doors {
+            text-align: center;
+        }
+
+        #result {
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #gameButtons button {
+            display: none;
+            text-align: center;
+            background-color: #4f4f4f;
+            margin: 40px;
         }

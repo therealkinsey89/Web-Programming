@@ -16,16 +16,20 @@
         <a href="../projects.html">Projects</a>
         <a href="../cause.html">Cause</a>
     </nav>
-	<p>Click on a door to select it.</p>
+	<p id="result">Click on a door to select it.</p>
 	<div id="doors">
 		<div class="door" id="door1" onclick="script.js">Door 1</div>
 		<div class="door" id="door2" onclick="script.js">Door 2</div>
 		<div class="door" id="door3" onclick="script.js">Door 3</div>
 	</div>
-	<button id="reselect">Reselect?</button>
-	<button id="reveal">Reveal?</button>
-	<button id="playAgain">Play Again?</button>
-	<p id="result"></p>
+	<div id="gameButtons">
+		<button class="door" id="reselect">Reselect?</button>
+		<button class="door" id="reveal">Reveal?</button>
+		<button class="door" id="playAgain">Play Again?</button>
+	</div>
 	<script src="script.js"></script>
+	<footer>
+		Course work for University of the Cumberlands course: Web Programming ITSS-334-B20
+	</footer>
 </body>
 </html>
