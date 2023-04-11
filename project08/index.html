@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../layout.css" rel="stylesheet" type="text/css">
+	<title>CSV Converter</title>
+</head>
+<body>
+	<h1>ACME Customer Information</h1>
+	<nav>
+		<a href="../index.html">Home</a>
+		<a href="../projects.html">Projects</a>
+		<a href="../cause.html">Cause</a>
+	</nav>
+	
+	<form method="post" action="converter.php">
+		<label for="fname">First Name:</label><br>
+		<input type="text" name="fname" id="fname" required><br>
+
+		<label for="lname">Last Name:</label><br>
+		<input type="text" name="lname" id="lname" required><br>
+
+		<label>Favorite Color</label><br>
+		<input type="text" name="color" id="color" required><br>
+
+		<label for="email">Email Address:</label><br>
+		<input type="email" id="email" name="email" required><br>
+
+		<label>Phone Number</label><br>
+		<input type="tel" id="phone" name="phone" required><br>
+		
+		<label>Street Address:</label><br>
+		<input type="text" id="streetAdd" name="streetAdd" required><br>
+		
+		<label>City:</label><br>
+		<input type="text" id="city" name="city" required><br>
+		
+		<label>State:</label><br>
+		<input type="text" maxlength="2" id="state" name="state"required><br>
+		
+		<label>ZIP:</label><br>
+		<input type="number" maxlength="5" id="zip" name="zip"required minlength="5"><br>
+		
+		<label>Country</label><br>
+		<input type="text" id="country" name="country"required><br>
+		
+		<label>Birthday:</label><br>
+		<input type="date" id="dob" name="dob"required><br>
+	  
+		<input type="submit" value="Submit">
+	  </form>
+	  
+	<!--<form method="post" action="converter.php">
+		<label>First Name:</label><br>
+		<input type="text" id="fName" name="fName" required><br>
+		<label>Last Name:</label><br>
+		<input type="text" id="lName" name="lName" required><br><br>
+		<label>Gender:</label><br>
+		<input type="radio" id="male" name="male">Male</button>
+		<input type="radio" id="female" name="female">Female</button><br><br>
+		<label>Email Address:</label><br>
+		<input type="email" id="emailAdd" name="emailAdd" required><br>
+		<label>Phone Number</label><br>
+		<input type="tel" id="phone" name="phone" required><br>
+		<label>Street Address:</label><br>
+		<input type="text" id="streetAdd" name="streetAdd" required><br>
+		<label>City:</label><br>
+		<input type="text" id="city" name="city" required><br>
+		<label>State:</label><br>
+		<input type="text" maxlength="2" id="state" name="state"required><br>
+		<label>ZIP:</label><br>
+		<input type="number" maxlength="5" id="zip" name="zip"required minlength="5"><br>
+		<label>Country</label><br>
+		<input type="text" id="country" name="country"required><br>
+		<label>Birthday:</label><br>
+		<input type="date" id="dob" name="dob"required><br>
+		<input type="submit" id="submit" name="submit" value="Submit">-->
+	</form>
+</body>
+</html>
