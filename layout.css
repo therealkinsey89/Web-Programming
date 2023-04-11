@@ -243,3 +243,25 @@ td{
             background-color: #4f4f4f;
             margin: 40px;
         }
+        div {
+            text-align: center;
+        }
+        
+        h1 {
+            text-align: center  ;
+        }
+        
+        form {
+            text-align: center;
+        }
+        
+        label {
+            padding: 10px;
+            margin: 20px;
+        }
+        
+        #csv {
+            margin: 20px;
+            width: 400px;
+        }
+        
