@@ -265,3 +265,6 @@ td{
             width: 400px;
         }
         
+        #results {
+            text-align: center;
+        }
