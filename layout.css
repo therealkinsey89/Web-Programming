@@ -5,15 +5,15 @@ header{
 /* navigation styling */
     nav{
         display: flex;
-        justify-content: space-between;
-        margin: 0px 450px;
+        justify-content: center;
+        /* margin: 0px 450px; */
     }
 
         nav a{
             text-decoration:none;
             color:black;
-            padding: 10px;
-            font-size: larger;
+            padding: 10px 17px 15px;
+            font-size: x-large;
             font-family: sans-serif;
         }
 
@@ -102,8 +102,10 @@ footer{
 }
 
 form{
-    margin: 25px 0px 0px 250px;
+    /* margin: 25px 0px 0px 250px; */
+    margin: 0 auto;
     font-size: larger;
+    text-align: center;
 }
 
 label{
@@ -249,10 +251,6 @@ td{
         
         h1 {
             text-align: center  ;
-        }
-        
-        form {
-            text-align: center;
         }
         
         label {
