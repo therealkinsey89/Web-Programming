@@ -16,13 +16,13 @@
 		function madlibs(array $a) {
 			$string = implode(",", $a);
 			$an = "an";
-			$a = "a";
-			echo "<h3 id='results' style='text-align:center'>The Wacky Adventures of" . (isVowel($a['adj1'])? $a : $an) . $a['adj1'] . " " . $a['noun1'] . "</h3>";
-			echo "<p id='results' style='text-align:center'>Once upon a time, there was" . (isVowel($a['adj1'])? $a : $an) . $a['adj1'] . " " . $a['noun1'] . " named " . $a['name1'] . ". One day, " . $a['name1'] . " decided to go on" . (isVowel($a['adj2'])? $a : $an) . $a['adj2'] . " adventure. " . $a['name1'] . " packed" . (isVowel($a['adj3'])? $a : $an) . $a['adj3'] . " backpack and set off on foot.<br><br>
+			$b = "a";
+			echo "<h3 id='results' style='text-align:center'>The Wacky Adventures of " . (isVowel($a['adj1'])? $b : $an) . " "  . $a['adj1'] . " " . $a['noun1'] . "</h3>";
+			echo "<p id='results' style='text-align:center'>Once upon a time, there was " . (isVowel($a['adj1'])? $b : $an) . " "  . $a['adj1'] . " " . $a['noun1'] . " named " . $a['name1'] . ". One day, " . $a['name1'] . " decided to go on " . (isVowel($a['adj2'])? $b : $an) . " "  . $a['adj2'] . " adventure. " . $a['name1'] . " packed " . (isVowel($a['adj3'])? $b : $an) . " "  . $a['adj3'] . " backpack and set off on foot.<br><br>
 
-			As " . $a['name1'] . " walked through the " . $a['adj1'] . " forest, " . $a['name1'] . " encountered a talking " . $a['animal1'] . " who offered to guide " . $a['name1'] . " to the nearest " . $a['noun2'] . ". Along the way, they ran into" . (isVowel($a['adj2'])? $a : $an) . $a['adj2'] . " group of " . $a['pNoun1'] . " who challenged " . $a['name1'] . " to" . (isVowel($a['verb1'])? $a : $an) . $a['verb1'] . " competition.<br><br>
+			As " . $a['name1'] . " walked through the " . $a['adj1'] . " forest, " . $a['name1'] . " encountered a talking " . $a['animal1'] . " who offered to guide " . $a['name1'] . " to the nearest " . $a['noun2'] . ". Along the way, they ran into " . (isVowel($a['adj2'])? $b : $an) . " "  . $a['adj2'] . " group of " . $a['pNoun1'] . " who challenged " . $a['name1'] . " to " . (isVowel($a['verb1'])? $b : $an) . " "  . $a['verb1'] . " competition.<br><br>
 			
-			" . $a['name1'] . " emerged victorious and continued on the journey, coming across a mysterious, " . $a['adj3'] . " castle. Inside the castle, " . $a['name1'] . " found" . (isVowel($a['adj4'])? $a : $an) . $a['adj4'] . " room filled with treasure, but also guarded by" . (isVowel($a['adj2'])? $a : $an) . $a['adj2'] . " dragon. " . $a['name1'] . " used" . (isVowel($a['noun2'])? $a : $an) . $a['noun2'] . " to defeat the dragon and claimed the treasure.<br><br>
+			" . $a['name1'] . " emerged victorious and continued on the journey, coming across a mysterious, " . $a['adj3'] . " castle. Inside the castle, " . $a['name1'] . " found " . (isVowel($a['adj4'])? $b : $an) . " "  . $a['adj4'] . " room filled with treasure, but also guarded by " . (isVowel($a['adj2'])? $b : $an) . " "  . $a['adj2'] . " dragon. " . $a['name1'] . " used " . (isVowel($a['noun2'])? $b : $an) . " "  . $a['noun2'] . " to defeat the dragon and claimed the treasure.<br><br>
 			
 			After the adventure, " . $a['name1'] . " returned home with a newfound appreciation for " . $a['adj3'] . " living and a backpack full of treasure.<br><br>
 			
@@ -48,7 +48,7 @@
 			'pNoun1' => $_POST['pNoun1'],
 			'verb1' => $_POST['verb1']
 		);
-		
+
 		// Do something with the form values
 		// ...
 		//$csvString = implode(",", $form_values);
